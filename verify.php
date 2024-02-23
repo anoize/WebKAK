@@ -15,8 +15,6 @@ if (isset($_SESSION['id'])) {
     <title>Login</title>
 </head>
 <body>
-    <h1 style="text-align:center ;">Webboard KakKak</h1>
-    <hr>
     <?php
 
     $n = $_POST['name'];
@@ -26,19 +24,24 @@ if (isset($_SESSION['id'])) {
         $_SESSION['name']='admin';
         $_SESSION['role']='a';
         $_SESSION['id']=session_id();
-        echo "<center>ยินดีต้อนรับ คุณADMIN <Br>";
+        header("location:index.php");
+        die();
     }
     elseif ($_POST['name'] == "member" && $_POST['password'] == "mem1234") {
         $_SESSION['name']='member';
         $_SESSION['role']='m';
         $_SESSION['id']=session_id();
-        echo "<center>ยินดีต้อนรับ คุณMEMBER <BR>";
+        header("location:index.php");
+        die();
     }
     else{
-        echo"<center>ชื่อบัญชีหรือรหัสผ่านไม่ถูกต้อง <BR>";
-        echo"<a href=login.php>เข้าสู่ระบบอีกครั้ง</a>";
+        //echo"<center>ชื่อบัญชีหรือรหัสผ่านไม่ถูกต้อง <BR>";
+        //echo"<a href=login.php>เข้าสู่ระบบอีกครั้ง</a>";
+        $_SESSION['error']='error';
+        header("location:login.php");
+        die();
     }
-    echo"<a href=index.php>กลับไปหน้าหลัก</a>";
+    
     ?>
     
 </div>
