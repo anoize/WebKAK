@@ -57,8 +57,15 @@ session_start();
   </button>
   <ul class="dropdown-menu">
     <li><a class="dropdown-item" href="#">ทั้งหมด</a></li>
-    <li><a class="dropdown-item" href="#">เรื่องเรียน</a></li>
-    <li><a class="dropdown-item" href="#">เรื่องทั่วไป</a></li>
+    <?php
+      $conn=new PDO("mysql:host=localhost;dbname=webbord;charset=utf8","root","");
+      $sql="SELECT * FROM category ";
+      foreach($conn->query($sql) as $row){
+        echo"<li> <a class=dropdown-item href=#>$row[name]</a></li>";
+
+      }
+      $conn=null;
+    ?>
   </ul>
 </span>
   </div>
@@ -73,6 +80,7 @@ session_start();
 </div>
 <table class="table table-striped mt-4">
 <?php
+        $conn=new PDO("mysql:host=localhost;")
         for ($i=1; $i <=10 ; $i++) { 
             echo"<tr> <td class='d-flex justify-content-between'><a href=post.php?id=$i style=text-decoration:none>กระทู้ที่ $i </a>";
             if ((isset($_SESSION['id'])) && ($_SESSION['role']=='a')) {

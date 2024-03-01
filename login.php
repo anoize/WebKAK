@@ -41,7 +41,7 @@ if (isset($_SESSION['id'])) {
                 <form action="verify.php" method="post">
                     <div class="form-group">
                         <label for="user" class="form-label">Login:</label>
-                        <input type="text" id="user" class="form-control" name="name" required></div>
+                        <input type="text" id="user" class="form-control" name="login" required></div>
                         <div class="form-group mt-2">
                         <label for="password" class="form-label">Password:</label>
                         <input type="password" id="password" class="form-control" name="password" required>
