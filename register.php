@@ -15,23 +15,70 @@ if (isset($_SESSION['id'])) {
     <title>Login</title>
 </head>
 <body>
-
-    <h1 style="text-align:center ;">สมัครสมาชิก</h1>
-    <hr>
-    <form action="">
-    <table style="border: 2px solid black; width: 40%" align="center">
-        <tr><td colspan="2" style="background-color: #6cd2fe;">กรอกข้อมูล</td></tr>
-        <tr><td>ชื่อบัญชี:</td><td><input type="text" name="login" size ="40"></td></tr>
-        <tr><td>รหัสผ่าน:</td><td><input type="password" name="login" size ="40"></td></tr>
-        <tr><td>ชื่อ-นามสกุล:</td><td><input type="text" name="login" size ="40"></td></tr>
-        <tr><td>เพศ :</td>
-            <td><input type="radio"name="gender" value="male">ชาย<br>
-        <input type="radio"name="gender" value="female" >หญิง<br>
-        <input type="radio"name="gender" value="enother" >อื่นๆ</td>
-    </tr>
-        <tr><td>อีเมล:</td><td><input type="email" name="login" size ="40"></td></tr>
-        <tr><td colspan="2" align="center"><input type="submit"value="สมัครสมาชิก"></td></tr>
-    </table>
+    <div class="container">
+        <h1 style="text-align:center ;" class="mt-3">Webboard Kakkak</h1>
+        <?php include "nav.php"?>
+        <div class="row mt-4">
+            <div class="col-lg-3 col-md-2 col-sm-1"></div>
+            <div class="col-lg-6 col-md-8 col-sm-10">
+                <div class="card border-primary">
+                    <div class="card-header bg-primary text-white">เข้าสู่ระบบ</div>
+                    <div class="card-body">
+                        <form action="register_save.php" method="post">
+                            <div class="row">
+                                <label for="login" class="col-lg-3 col-form-label">ชื่อบัญชี</label>
+                                <div class="col-lg-9">
+                                    <input type="text" id="login" name="login" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <label for="password" class="col-lg-3 col-form-label">รหัสผ่าน</label>
+                                <div class="col-lg-9">
+                                    <input type="password" id="password" name="pwd" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <label for="name" class="col-lg-3 col-form-label">ชื่อ-นามสกุล</label>
+                                <div class="col-lg-9">
+                                    <input type="text" id="name" name="name" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <label for="sex" class="col-lg-3 col-form-label">เพศ</label>
+                                <div class="col-lg-9">
+                                    <div class="form-check">
+                                    <input type="radio" id="sex" value="m" name="gender" class="form-check-input" required>
+                                    <label for="sex" class="form-check-label"> ชาย</label>
+                                    </div>
+                                    <div class="form-check">
+                                    <input type="radio" id="sex" value="f" name="gender" class="form-check-input" required>
+                                    <label for="sex" class="form-check-label"> หญิง</label>
+                                    </div>
+                                    <div class="form-check">
+                                    <input type="radio" id="sex" value="o" name="gender" class="form-check-input" required>
+                                    <label for="sex" class="form-check-label"> อื่นๆ</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <label for="email" class="col-lg-3 col-form-label">อีเมล</label>
+                                <div class="col-lg-9">
+                                    <input type="email" id="email" name="email" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-lg-12 d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-primary btn-sm me-2"> <i class="bi bi-save">สมัครสมาชิก</i> </button>
+                                    <button type="reset" class="btn btn-danger btn-sm"> <i class="bi bi-square">ยกเลิก</i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-2 col-sm-1"> </div>
+        </div>
+    </div>
     <br>
     <center> <a href="login.php">กลับไปหน้าหลัก</a></center>
 </form>
