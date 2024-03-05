@@ -24,10 +24,10 @@
 
         <?php } else{?>
 
-            <li class="nav-item dropdown">
+          <li class="nav-item dropdown">
           <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-lines-fill"></i>
 
-            <?php echo $_SESSION['name'];?>
+            <?php echo $_SESSION['username'];?>
           </a>
           
           <ul class="dropdown-menu">

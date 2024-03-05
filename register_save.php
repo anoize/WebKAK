@@ -22,11 +22,11 @@ $result=$conn->query($sql);
     }
 
 $conn=null;
-header("location:index.php");
+header("location:register.php");
     die();
 }
 else {
-    header("location:index.php");
+    header("location:register.php");
     die();
 }
 ?>
