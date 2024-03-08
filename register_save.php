@@ -5,6 +5,7 @@ if (isset($_POST['login'])) {
 
 $login=$_POST['login'];
 $password=sha1($_POST['pwd']);
+$password2=sha1($_POST['pwd2']);
 $name=$_POST['name'];
 $gender=$_POST['gender'];
 $email=$_POST['email'];
@@ -14,11 +15,19 @@ $sql="SELECT * FROM user where login='$login'";
 $result=$conn->query($sql);
     if ($result->rowCount()==1) {
          $_SESSION['add_login']="error";
-    }else {
+    }   
+    
+    
+    else {
+        if ($password!=$password2) {
+            echo "<script>alert(""); </script>";
+        }
+        else{
         $sql1="INSERT INTO user (login, password, name, gender, email, role)
             VALUES ('$login','$password','$name','$gender','$email','m')";
             $conn->exec($sql1);
          $_SESSION['add_login']="success";
+        }
     }
 
 $conn=null;

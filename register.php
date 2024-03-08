@@ -43,12 +43,25 @@
                                 <input id="user" type="text" name="login" class="form-control" require>
                             </div>
                         </div>
+
+
+
+                        
                         <div class="row mt-3">
                             <label for="password" class="col-lg-3 col-form-label">รหัสผ่าน:</label>
                             <div class="col-lg-9">
                                 <input id="password" type="password" name="pwd" class="form-control" require>
                             </div>
                         </div>
+                        <div class="row mt-3">
+                            <label for="password" class="col-lg-3 col-form-label">ใส่รหัสผ่านซ้ำ:</label>
+                            <div class="col-lg-9">
+                                <input id="password" type="password" name="pwd2" class="form-control" require>
+                            </div>
+                        </div>
+
+
+
                         <div class="row mt-3">
                             <label for="name" class="col-lg-3 col-form-label">ชื่อ-นามสกุล:</label>
                             <div class="col-lg-9">

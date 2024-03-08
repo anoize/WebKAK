@@ -10,13 +10,14 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Webboard</title>
 </head>
 <body>  
 <div class="container-lg">
+
     <h1 style="text-align: center;" class="mt-3">WebboardkaK</h1>
     <hr>
 
@@ -26,18 +27,19 @@ session_start();
 
 <div class="mt-3 d-flex justify-content-between" >
 <div>
+
     <label> หมวดหมู่</label>
     <span class="dropdown">
   <button class="btn btn-light btn-sm  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
     --ทั้งหมด--
   </button>
-  <ul class="dropdown-menu">
+  <ul class="dropdown-menu" aria-labelledby="Button2">
     <li><a class="dropdown-item" href="#">ทั้งหมด</a></li>
     <?php
       $conn=new PDO("mysql:host=localhost;dbname=webbord;charset=utf8","root","");
       $sql="SELECT * FROM category ";
       foreach($conn->query($sql) as $row){
-        echo"<li> <a class=dropdown-item href=#>$row[name]</a></li>";
+        echo"<li> <a class='dropdown-item' href=#>$row[name]</a></li>";
 
       }
       $conn=null;
