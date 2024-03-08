@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <script src="bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webboard</title>
+</head>
+<body>  
 <?php
 session_start();
 if (isset($_POST['login'])) {
@@ -20,22 +31,25 @@ $result=$conn->query($sql);
     
     else {
         if ($password!=$password2) {
-            echo "<script>alert(""); </script>";
+            echo "<script>alert(); </script>";
         }
         else{
         $sql1="INSERT INTO user (login, password, name, gender, email, role)
             VALUES ('$login','$password','$name','$gender','$email','m')";
             $conn->exec($sql1);
          $_SESSION['add_login']="success";
+         header("location:login.php");
+        die();
         }
     }
 
 $conn=null;
-header("location:register.php");
-    die();
 }
 else {
     header("location:register.php");
     die();
 }
 ?>
+</body>
+</html>
+
