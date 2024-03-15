@@ -56,7 +56,7 @@
                         <div class="row mt-3">
                             <label for="password" class="col-lg-3 col-form-label">ใส่รหัสผ่านซ้ำ:</label>
                             <div class="col-lg-9">
-                                <input id="password" type="password" name="pwd2" class="form-control" require>
+                                <input id="password2" type="password" name="pwd2" class="form-control" onblur="OnblurPwd()" require>
                             </div>
                         </div>
 

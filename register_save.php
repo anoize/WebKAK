@@ -9,6 +9,16 @@
     <title>Webboard</title>
 </head>
 <body>  
+    <script>
+        function OnblurPwd(){
+            let pwd=document.getElementsById("pwd");
+            let pwd2=document.getElementsById("pwd2");
+            if(pwd.value!==pwd2.value){
+                alert("รหัสผ่านทั้งสองช่องไม่ตรงกัน");
+                pwd2.value="";
+            }
+        }
+        </script>
 <?php
 session_start();
 if (isset($_POST['login'])) {
